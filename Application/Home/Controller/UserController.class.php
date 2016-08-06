@@ -46,7 +46,14 @@ class UserController extends MyController {
 		}else{
             $this->showErr($usermodel->getError(),0);
         }
-        
-       
+    }
+    public function autoCode(){
+        $Verify =     new \Think\Verify();
+        $Verify->fontSize = 16;
+        $Verify->length   = 5;
+        $Verify->useNoise = false;
+        $Verify->imageW   = 172;
+        $Verify->imageH   = 28;
+        $Verify->entry();
     }
 }
