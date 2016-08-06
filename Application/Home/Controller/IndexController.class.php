@@ -79,22 +79,14 @@ class IndexController extends MyController {
     public function rental(){
         $user_companymodel = D('User_company');
         $city_id = empty($_GET['city_id']) ? 0 : $_GET['city_id'];
-        $class = empty($_GET['class']) ? 0 : $_GET['class'];
         $class2 = empty($_GET['class2']) ? 0 : $_GET['class2'];
-        $level = empty($_GET['level']) ? 0 : $_GET['level'];
-        $where = '1 = 1';
+        $where = 'class = 3';
         //拼接where条件
         if(!empty($city_id)){
             $where .= ' AND city_id = '.$city_id;
         }
-        if(!empty($class)){
-            $where .= ' AND class = '.$class;
-        }
         if(!empty($class2)){
             $where .= ' AND class2 = '.$class2;
-        }
-        if(!empty($level)){
-            $where .= ' AND level = '.$level;
         }
         //分页
         $pageCount = 10;//设置一页的记录数量
@@ -107,7 +99,7 @@ class IndexController extends MyController {
             $page = $totalPage;
         }
         $start = $pageCount*($page - 1);
-        $company = $user_companymodel->field()->where($where)->order(array('order'=>'desc','id'=>'desc'))->limit($start,$pageCount)->find();
+        $factory = $user_companymodel->field()->where($where)->order(array('order'=>'desc','id'=>'desc'))->limit($start,$pageCount)->find();
         
     	$this->display();
     }
