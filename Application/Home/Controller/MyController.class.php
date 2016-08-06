@@ -1,7 +1,10 @@
 <?php
-namespace Admin\Controller;
+namespace Home\Controller;
 use Think\Controller;
 class MyController extends Controller{
+public  function __construct(){
+     parent::__construct();
+}
 public function showErr($msg,$ajax=0,$jump='',$stay=0,$from="")
 {
     if($ajax==1)
