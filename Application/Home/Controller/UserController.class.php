@@ -29,15 +29,23 @@ class UserController extends MyController {
         $this->display('login');
     }
     public function dologin(){
-        $usermodel = D('User');
-        //使用模型的validate方法，进行动态验证，
-        if($usermodel->validate($usermodel->_login_validate)->create()){
-            if($usermodel->login()){
-                $this->redirect('UserCenter/index');
-            }else{
-                $this->showErr($usermodel->getError(),0);
-            }
-        }else{
+        $usermodel=D('User');
+		if($usermodel->validate($usermodel->rules)->create()){
+				$username=I('post.username');
+				$password=I('post.password');
+				$userdata=$usermodel->field('id,active')->where("username='$username' and password='$password'")->find();
+				if($userdata['active']){
+					$_SESSION['username']=$username;
+					$_SESSION['id']=$userdata['id'];
+					//if(I('post.remember')){
+					$_SESSION['password']=$password;
+					//}
+					$cartmodel = D('Cart');
+					$cartmodel->cookie2db();
+					$this->success('登录成功',U('Index/index'));exit;
+				}
+
+		}else{
             $this->showErr($usermodel->getError(),0);
         }
         
