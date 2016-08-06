@@ -1,0 +1,33 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.box .area-address{ background:#f8f8f8; border:1px solid #d3d3d3; margin-top:20px; padding:0 20px 0 20px;}
+.box .area-address-qu{ border-bottom:1px solid #d3d3d3;overflow:hidden; padding-top:20px;}
+.box .area-address-qu li{ float:left; padding-right:30px; line-height:55px; height:55px; font-size:18px; color:#000; padding-left:20px;}
+.box .area-address-qu .li-style{ width:100px; background:#12b7f5; text-align:center; padding-right:0; margin-right:30px; height:40px; line-height:45px; height:45px; color:#fff; padding-left:0;}
+.box .no-boerder{ border:none;}
+.box .nav-gion{ margin-top:20px; border:1px solid #d3d3d3; height:55px; line-height:55px;}
+.box .nav-gion li{ float:left; font-size:18px; padding-left:40px;}
+.box .nav-gion li a{ color:#666666}
+.box .nav-gion li a:hover{ color:#12b7f5;}
+
+.box .gion-list,.rental-list{ padding-top:45px;}
+.box .gion-list li{ border-bottom:1px solid #e6e6e6; overflow:hidden; padding-bottom:10px; margin-bottom:20px;}
+.box .gion-list .gion-img{ margin-right:20px;}
+.box .gion-list p{ height:32px; line-height:32px;font-size:16px; color:#000;}
+.box .gion-list .gion-p1 span{ padding-right:80px;}
+.box .gion-list .gion-p2 span{ padding-left	:20px; padding-right:30px; color:#666666;}
+.box .gion-list .gion-p3 span{ padding-left:20px;}
+.box .page{ width:400px; margin:0 auto;}
+.box .page li{ float:left; font-size:16px; color:#000; padding:0 10px; margin-bottom:20px; }
+
+.box .rental-list li{ border-bottom:1px dashed #e6e6e6; overflow:hidden; padding-bottom:20px; margin-bottom:20px;}
+.box .rental-list li .rental-img{margin-right:20px;}
+.box .rental-list li p{ line-height:30px;}
+.box .rental-list li .rental-p1{ font-size:16px;}
+.box .rental-list li .rental-p1 a{ color:#4599da;}
+.box .rental-list li .rental-p2{ padding-left:10px;}
+.box .rental-list .lianxi-rental{ width:300px; text-align:center; padding-top:30px; padding-right:20px; line-height:35px;}
+.box .rental-list .lianxi-rental .lianxi-rental-p1{ color:#12b7f5; font-size:16px;}
+.box .rental-list .lianxi-rental h3{ color:#000;}
+
+
