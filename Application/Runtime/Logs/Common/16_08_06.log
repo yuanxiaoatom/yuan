@@ -52,3 +52,27 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000691s ]
 ERR: 无法加载模块:Public
 
+[ 2016-08-06T17:28:10+08:00 ] 127.0.0.1 /Public/Mobile/images/menu_minus.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+ERR: 无法加载模块:Public
+
+[ 2016-08-06T17:28:10+08:00 ] 127.0.0.1 /Public/Mobile/images/menu_arrow.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000823s ]
+ERR: 无法加载模块:Public
+
+[ 2016-08-06T17:28:24+08:00 ] 127.0.0.1 /Public/Mobile/images/menu_arrow.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000674s ]
+ERR: 无法加载模块:Public
+
+[ 2016-08-06T17:28:24+08:00 ] 127.0.0.1 /Public/Mobile/images/menu_minus.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000665s ]
+ERR: 无法加载模块:Public
+
