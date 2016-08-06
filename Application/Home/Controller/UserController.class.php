@@ -31,18 +31,16 @@ class UserController extends MyController {
     public function dologin(){
         $usermodel=D('User');
 		if($usermodel->validate($usermodel->rules)->create()){
-				$username=I('post.username');
+				$user_name=I('post.user_name');
 				$password=I('post.password');
-				$userdata=$usermodel->field('id,active')->where("username='$username' and password='$password'")->find();
-				if($userdata['active']){
-					$_SESSION['username']=$username;
+				$userdata=$usermodel->field('id,active')->where("user_name='$user_name' and password='$password'")->find();
+				if($userdata['is_effect']){
+					$_SESSION['user_name']=$user_name;
 					$_SESSION['id']=$userdata['id'];
 					//if(I('post.remember')){
 					$_SESSION['password']=$password;
 					//}
-					$cartmodel = D('Cart');
-					$cartmodel->cookie2db();
-					$this->success('登录成功',U('Index/index'));exit;
+					$this->redirect('Index/index');exit;
 				}
 
 		}else{
