@@ -11,8 +11,8 @@ class UserController extends MyController {
     }
     public function doregist(){
         $usermodel = D('User');
-        if($Usermodel->create()){
-            $Usermodel->add();
+        if($usermodel->create()){
+            $usermodel->add();
             $this->showSuccess('注册账号成功，即将为您跳转到用户中心！',0,U('UserCenter/index'));
         }        
     }
