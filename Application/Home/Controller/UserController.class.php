@@ -3,8 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 class UserController extends MyController {
     public function index(){
-        echo 1111;
-        $this->display('login');
+        $this->login();
     }
     public function regist(){
         $this->display('regist');
