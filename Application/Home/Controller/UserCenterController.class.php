@@ -24,7 +24,10 @@ class UserCenterController extends MyController{
 	    $user_companymodel = D('User_company');
 	    if($user_companymodel->create()){
             $user_companymodel->add();
-            $this->showSuccess('信息发布成功，即将为您跳转到发布信息列表！',0,U('UserCenter/index'));
+            //content字段存入content表
+            //拼接sql语句
+            //执行sql语句
+            $this->showSuccess('信息发布成功，即将为您跳转到信息列表！',0,U('UserCenter/messageList'));
         }
 	}
 	//信息列表
@@ -42,12 +45,39 @@ class UserCenterController extends MyController{
             $page = $totalPage;
         }
         $start = $pageCount*($page - 1);
-        $company = $user_companymodel->field()->where($where)->order(array('id'=>'desc','order'=>'desc'))->limit($start,$pageCount)->find();    
+        $messageList = $user_companymodel->field()->where($where)->order(array('id'=>'desc','order'=>'desc'))->limit($start,$pageCount)->find();    
         $this->display();
-	    $this->display();
 	}
 	//修改信息
-	public function editMessage() {
-	    $this->display();
+	public function editMessage() {	    
+	    $messageId = $_GET['messageid'];
+	    $user_companymodel = D('User_company');
+	    $sql = 'SELECT uc.*,cc.* FROM `qifan_user_company` AS uc LEFT JOIN `qifan_company_content` AS cc ON uc.id = cc.company_id WHERE uc.is_del = 1 AND uc.id = '.$messageId.' AND uc.user_id = '.$GLOBALS['user_info']['id'];
+	    $messageInfo = $user_companymodel->query($sql);
+	    if(!empty($messageInfo)){
+	        $this->display();
+	    }else{
+	        $this->showErr('非法请求',0,U('UserCenter/messageList'));
+	    }
+	}
+	//保存修改信息
+	public function doEditMessage() {
+	    $user_companymodel = D('User_company');
+	    if($user_companymodel->create()){
+            $user_companymodel->save();
+            //content字段存入content表
+            //拼接sql语句
+            //执行sql语句
+            $this->showSuccess('信息发布成功，即将为您跳转到信息列表！',0,U('UserCenter/messageList'));
+        }
+	}
+	public function deleteMessage() {
+	    $messageId = $_GET['messageid'];
+	    $sql = 'UPDATE `qifan_user_company` SET `is_del` = 1 WHERE id='.$messageId.' AND `user_id` = '.$GLOBALS['user_info']['id'];
+	    if(M()->query($sql)){
+	        $this->showSuccess('删除成功',1,U('UserCenter/messageList'));
+	    }else{
+	        $this->showErr('删除失败',1,U('UserCenter/messageList'));
+	    }
 	}
 }
