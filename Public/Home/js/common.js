@@ -17,10 +17,9 @@ $(function(){
      }
   tabs(".investment_title","on",".investment_con");
   
- })
+ });
+ 
+ 
  
 
-
-
-
-	
+ 
