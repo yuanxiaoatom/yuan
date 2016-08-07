@@ -8,8 +8,10 @@ public  function __construct(){
             $usermodel=D('User');
             $user_name=$_SESSION['user_name'];
             $password=$_SESSION['password'];
-            if($userdata=$usermodel->field()->where("user_name='$user_name' and password='$password'")->find()){
-                $GLOBALS['user_info'] = $userdata;
+            $where = "user_name='".$user_name."' and password='".$password."'";
+            $user_info=$usermodel->field()->where($where)->find();
+            if(!empty($user_info)){
+                $GLOBALS['user_info'] = $user_info;
             }
         }
 }

@@ -47,7 +47,7 @@ class IndexController extends MyController {
         $class = empty($_GET['class']) ? 0 : $_GET['class'];
         $class2 = empty($_GET['class2']) ? 0 : $_GET['class2'];
         $level = empty($_GET['level']) ? 0 : $_GET['level'];
-        $where = '1 = 1';
+        $where = 'is_del = 1';
         //拼接where条件
         if(!empty($city_id)){
             $where .= ' AND city_id = '.$city_id;
@@ -80,7 +80,7 @@ class IndexController extends MyController {
         $user_companymodel = D('User_company');
         $city_id = empty($_GET['city_id']) ? 0 : $_GET['city_id'];
         $class2 = empty($_GET['class2']) ? 0 : $_GET['class2'];
-        $where = 'class = 3';
+        $where = 'is_del = 1 And class = 3';
         //拼接where条件
         if(!empty($city_id)){
             $where .= ' AND city_id = '.$city_id;
