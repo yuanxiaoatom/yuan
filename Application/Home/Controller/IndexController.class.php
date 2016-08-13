@@ -103,4 +103,26 @@ class IndexController extends MyController {
         
     	$this->display();
     }
+    /*新闻中心*/
+    public function news(){
+    	$this->display();
+    }
+    
+ 
+    
+    /*留言板*/
+    public function message(){
+    	$this->display();
+    }
+    
+    /*服务*/
+    public function server(){
+    	$this->display();
+    }
+    
+    /*税务规划*/
+    public function taxation(){
+    	$this->display();
+    }
+    
 }

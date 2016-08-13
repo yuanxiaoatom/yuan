@@ -15,7 +15,7 @@ class UserCenterController extends MyController{
 	public function member(){
 		$this->display();
 	}
-	//发布信息
+	//发布信息,前端已做
 	public function addMessage() {
 	    $this->display();
 	}
